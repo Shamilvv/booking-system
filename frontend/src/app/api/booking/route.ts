@@ -1,28 +1,4 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import net from 'net';
-
-// Helper to test if a port is reachable
-async function checkConnectivity(host: string, port: number, timeout = 3000): Promise<boolean> {
-    return new Promise((resolve) => {
-        const socket = new net.Socket();
-        const timer = setTimeout(() => {
-            socket.destroy();
-            resolve(false);
-        }, timeout);
-
-        socket.connect(port, host, () => {
-            clearTimeout(timer);
-            socket.destroy();
-            resolve(true);
-        });
-
-        socket.on('error', () => {
-            clearTimeout(timer);
-            resolve(false);
-        });
-    });
-}
 
 export async function POST(req: Request) {
     try {
