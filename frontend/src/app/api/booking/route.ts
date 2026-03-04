@@ -6,6 +6,15 @@ export async function POST(req: Request) {
         const data = await req.json();
         const { vehicleType, clientPhone, pickupAddress, dropoffAddress, pickupDate, pickupTime, files } = data;
 
+        // Debug environment variables (don't log the actual password)
+        console.log('Attempting to send email...');
+        console.log('EMAIL_USER exists:', !!process.env.EMAIL_USER);
+        console.log('EMAIL_PASS exists:', !!process.env.EMAIL_PASS);
+
+        if (!process.env.EMAIL_PASS) {
+            throw new Error('EMAIL_PASS is not configured in environment variables');
+        }
+
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -40,11 +49,16 @@ export async function POST(req: Request) {
         };
 
         await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully!');
 
         return NextResponse.json({ message: 'Booking request sent successfully' }, { status: 200 });
     } catch (error: any) {
         console.error('Error sending email:', error.message || error);
-        return NextResponse.json({ message: 'Failed to send booking request', error: error.message }, { status: 500 });
+        return NextResponse.json({
+            message: 'Failed to send booking request',
+            error: error.message,
+            code: error.code || 'UNKNOWN_ERROR'
+        }, { status: 500 });
     }
 }
 

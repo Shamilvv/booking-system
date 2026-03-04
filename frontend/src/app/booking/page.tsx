@@ -7,6 +7,8 @@ import { Truck, MapPin, Calendar, UploadCloud, CheckCircle } from 'lucide-react'
 
 export default function BookingPage() {
     const [step, setStep] = useState(1);
+    const totalSteps = 4;
+    const [isSuccess, setIsSuccess] = useState(false);
     const [files, setFiles] = useState<File[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
@@ -17,9 +19,8 @@ export default function BookingPage() {
         pickupDate: new Date().toISOString().split('T')[0],
         pickupTime: ''
     });
-    const totalSteps = 5;
 
-    const handleNext = () => setStep((prev) => Math.min(prev + 1, totalSteps));
+    const handleNext = () => setStep((prev) => Math.min(prev + 1, totalSteps + 1));
     const handlePrev = () => setStep((prev) => Math.max(prev - 1, 1));
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -53,9 +54,10 @@ export default function BookingPage() {
                 body: JSON.stringify({ ...formData, files: processedFiles }),
             });
             if (response.ok) {
-                setStep(6); // Success state
+                setIsSuccess(true);
             } else {
-                alert('Something went wrong. Please try again.');
+                const errorData = await response.json();
+                alert(`Error: ${errorData.message}\nDetail: ${errorData.error || 'No further details'}`);
             }
         } catch (error) {
             console.error('Submission error:', error);
@@ -78,7 +80,7 @@ export default function BookingPage() {
                     </div>
 
                     {/* Stepper */}
-                    {step <= totalSteps && (
+                    {!isSuccess && (
                         <div className="mb-8">
                             <div className="flex items-center justify-between relative">
                                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-gray-200 rounded-full"></div>
@@ -88,23 +90,23 @@ export default function BookingPage() {
                                 ></div>
 
                                 {[1, 2, 3, 4].map((i) => (
-                                    <div key={i} className={`relative flex items-center justify-center w-10 h-10 rounded-full border-2 ${step >= i ? 'bg-royal border-royal text-white' : 'bg-white border-gray-300 text-gray-400'} transition-colors duration-300 z-10`}>
+                                    <div key={i} className={`relative flex items-center justify-center w-10 h-10 rounded-full border-2 ${step >= i ? 'bg-royal border-royal text-white' : 'bg-white border-gray-300 text-gray-400'} transition-colors duration-300 z-10 font-bold`}>
                                         {i}
                                     </div>
                                 ))}
                             </div>
                             <div className="flex justify-between mt-2 text-xs font-medium text-gray-500 px-1">
-                                <span>Vehicle</span>
-                                <span>Location</span>
-                                <span>Date & Time</span>
-                                <span>Documents</span>
+                                <span className="w-10 text-center">Vehicle</span>
+                                <span className="w-10 text-center">Location</span>
+                                <span className="w-10 text-center">Date & Time</span>
+                                <span className="w-10 text-center">Docs</span>
                             </div>
                         </div>
                     )}
 
                     {/* Form Content */}
                     <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-10 border border-gray-100">
-                        {step === 6 ? (
+                        {isSuccess ? (
                             <div className="text-center py-10">
                                 <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100">
                                     <CheckCircle className="h-10 w-10 text-green-600" />
@@ -112,14 +114,21 @@ export default function BookingPage() {
                                 <h2 className="mt-6 text-2xl font-bold text-steel">Booking Confirmed!</h2>
                                 <p className="mt-2 text-steel-light">Your booking request has been received. Our team will contact you shortly.</p>
                                 <button
-                                    onClick={() => setStep(1)}
+                                    onClick={() => { setIsSuccess(false); setStep(1); }}
                                     className="mt-8 px-6 py-3 bg-royal text-white font-medium rounded-md hover:bg-royal-light transition-colors"
                                 >
                                     Book Another Transport
                                 </button>
                             </div>
                         ) : (
-                            <form onSubmit={step === totalSteps ? handleSubmit : (e) => { e.preventDefault(); handleNext(); }}>
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                if (step === totalSteps) {
+                                    handleSubmit(e);
+                                } else {
+                                    handleNext();
+                                }
+                            }}>
 
                                 {/* Step 1: Vehicle Type */}
                                 {step === 1 && (
@@ -305,9 +314,8 @@ export default function BookingPage() {
                                     ) : <div></div>}
 
                                     <button
-                                        type={step === totalSteps ? "submit" : "button"}
+                                        type="submit"
                                         disabled={isLoading}
-                                        onClick={step === totalSteps ? undefined : handleNext}
                                         className="px-8 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-royal hover:bg-royal-light focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
                                     >
                                         {isLoading ? 'Processing...' : (step === totalSteps ? 'Confirm Booking' : 'Continue')}
