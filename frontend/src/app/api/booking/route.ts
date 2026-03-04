@@ -50,7 +50,7 @@ export async function POST(req: Request) {
             },
             body: JSON.stringify({
                 from: 'ALNAS Website <onboarding@resend.dev>', // Resend default for unverified domains
-                to: 'alnastransports@gmail.com',
+                to: 'shamilvvhouse@gmail.com', // Updated to verified testing recipient
                 subject: `New Booking Request: ${vehicleType}`,
                 html: `
                     <h2>New Booking Details</h2>
