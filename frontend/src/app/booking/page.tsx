@@ -14,7 +14,7 @@ export default function BookingPage() {
         clientPhone: '',
         pickupAddress: '',
         dropoffAddress: '',
-        pickupDate: '',
+        pickupDate: new Date().toISOString().split('T')[0],
         pickupTime: ''
     });
     const totalSteps = 5;
@@ -210,6 +210,7 @@ export default function BookingPage() {
                                                     type="date"
                                                     name="pickupDate"
                                                     value={formData.pickupDate}
+                                                    min={new Date().toISOString().split('T')[0]}
                                                     onChange={handleChange}
                                                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-royal focus:ring-royal sm:text-sm border p-3"
                                                     required
