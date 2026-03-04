@@ -57,7 +57,8 @@ export default function BookingPage() {
                 setIsSuccess(true);
             } else {
                 const errorData = await response.json();
-                alert(`Error: ${errorData.message}\nDetail: ${errorData.error || 'No further details'}`);
+                const diagnosticInfo = errorData.diagnostic ? `\nDiagnostic: ${errorData.diagnostic}` : '';
+                alert(`Error: ${errorData.message}\nDetail: ${errorData.error || 'No further details'}${diagnosticInfo}`);
             }
         } catch (error) {
             console.error('Submission error:', error);
