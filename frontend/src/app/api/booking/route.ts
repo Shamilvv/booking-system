@@ -29,76 +29,58 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { vehicleType, clientPhone, pickupAddress, dropoffAddress, pickupDate, pickupTime, files } = body;
 
-        console.log('--- Booking Request Diagnostics ---');
-        console.log('EMAIL_USER exists:', !!process.env.EMAIL_USER);
-        console.log('EMAIL_PASS exists:', !!process.env.EMAIL_PASS);
+        console.log('--- Booking Request via Resend API ---');
+        const apiKey = process.env.RESEND_API_KEY;
 
-        // Run connectivity checks
-        const canReach465 = await checkConnectivity('smtp.gmail.com', 465);
-        const canReach587 = await checkConnectivity('smtp.gmail.com', 587);
-        const canReach80 = await checkConnectivity('google.com', 80); // Baseline internet test
-
-        console.log('Connectivity Test:', { canReach465, canReach587, canReach80 });
-
-        if (!canReach465 && !canReach587) {
-            console.error('CRITICAL: Both SMTP ports are unreachable from this environment.');
-            if (canReach80) {
-                console.error('Note: Internet is reachable (Port 80 OK), which means Render is likely blocking SMTP ports.');
-            }
+        if (!apiKey) {
+            throw new Error('RESEND_API_KEY is not configured');
         }
 
-        // Create a transporter using SMTP
-        const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 587, // Trying 587 as primary
-            secure: false, // Use STARTTLS
-            auth: {
-                user: process.env.EMAIL_USER || 'alnastransports@gmail.com',
-                pass: process.env.EMAIL_PASS,
+        // Format attachments for Resend
+        const attachments = (files || []).map((file: any) => ({
+            filename: file.name,
+            content: file.data, // Resend expects base64 string
+        }));
+
+        const resendResponse = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`,
             },
-            connectionTimeout: 15000,
-            greetingTimeout: 15000,
-            socketTimeout: 15000,
-            debug: true, // Enable debug
-            logger: true  // Log to console
+            body: JSON.stringify({
+                from: 'ALNAS Website <onboarding@resend.dev>', // Resend default for unverified domains
+                to: 'alnastransports@gmail.com',
+                subject: `New Booking Request: ${vehicleType}`,
+                html: `
+                    <h2>New Booking Details</h2>
+                    <p><strong>Vehicle Type:</strong> ${vehicleType}</p>
+                    <p><strong>Customer Phone:</strong> ${clientPhone}</p>
+                    <p><strong>Pickup:</strong> ${pickupAddress}</p>
+                    <p><strong>Drop-off:</strong> ${dropoffAddress}</p>
+                    <p><strong>Date:</strong> ${pickupDate}</p>
+                    <p><strong>Time:</strong> ${pickupTime}</p>
+                `,
+                attachments: attachments
+            }),
         });
 
-        const mailOptions = {
-            from: process.env.EMAIL_USER || 'alnastransports@gmail.com',
-            to: 'alnastransports@gmail.com',
-            subject: `New Booking Request: ${vehicleType}`,
-            text: `
-                Vehicle Type: ${vehicleType}
-                Customer Phone: ${clientPhone}
-                Pickup: ${pickupAddress}
-                Drop-off: ${dropoffAddress}
-                Date: ${pickupDate}
-                Time: ${pickupTime}
-            `,
-            attachments: (files || []).map((file: any) => ({
-                filename: file.name,
-                content: file.data,
-                encoding: 'base64',
-                contentType: file.contentType
-            }))
-        };
+        const result = await resendResponse.json();
 
-        await transporter.sendMail(mailOptions);
+        if (!resendResponse.ok) {
+            console.error('Resend API Error:', result);
+            throw new Error(result.message || 'Failed to send email via Resend');
+        }
+
         return NextResponse.json({ message: 'Booking request sent successfully!' });
 
     } catch (error: any) {
         console.error('Detailed Email Error:', error);
 
-        // Detailed error for the client
-        let diagnosticInfo = "";
-        if (error.code === 'ECONNRESET') diagnosticInfo = "Connection was reset by the server/firewall.";
-        if (error.code === 'ETIMEDOUT') diagnosticInfo = "Connection timed out. Render may be blocking SMTP ports.";
-
         return NextResponse.json({
             message: 'Failed to send booking request',
             error: error.message,
-            code: error.code,
-            diagnostic: diagnosticInfo
+            diagnostic: "API-based sending failed. Check RESEND_API_KEY."
         }, { status: 500 });
     }
 }
