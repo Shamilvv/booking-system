@@ -18,12 +18,14 @@ export async function POST(req: Request) {
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
+            port: 587,
+            secure: false, // Use STARTTLS
             auth: {
                 user: process.env.EMAIL_USER || 'alnastransports@gmail.com',
                 pass: process.env.EMAIL_PASS,
             },
+            connectionTimeout: 10000, // 10 seconds
+            greetingTimeout: 10000,
         });
 
         const mailOptions = {
