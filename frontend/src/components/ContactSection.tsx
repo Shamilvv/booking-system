@@ -22,7 +22,7 @@ export default function ContactSection() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-steel mb-2">Our Office</h3>
-                                <p className="text-steel-light">Industrial Area, Doha, State of Qatar</p>
+                                <p className="text-steel-light">Al Mansoura, Doha, State of Qatar</p>
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@ export default function ContactSection() {
                                 <h3 className="text-xl font-bold text-steel mb-2">Phone Numbers</h3>
                                 <div className="space-y-1">
                                     <p className="text-steel-light">+974 30395678 (Hotline)</p>
-                                    <p className="text-steel-light">+974 55123456 (Operations)</p>
+                                    <p className="text-steel-light">+974 66676657 (Operations)</p>
                                 </div>
                             </div>
                         </div>

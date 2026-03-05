@@ -64,7 +64,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-start">
                                 <MapPin className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-300">Doha, State of Qatar</span>
+                                <span className="text-gray-300">Al Mansoura, Doha, State of Qatar</span>
                             </li>
                         </ul>
                     </div>
