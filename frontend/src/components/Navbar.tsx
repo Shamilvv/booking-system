@@ -30,7 +30,7 @@ export default function Navbar() {
                     <div className="hidden md:flex space-x-8 items-center">
                         <Link href="/" className="text-steel font-medium hover:text-royal transition-colors">Home</Link>
                         <Link href="/#services" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Services</Link>
-                        <Link href="/booking" className="text-steel font-medium hover:text-royal transition-colors">Book Now</Link>
+                        <Link href="/#contact" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Enquiry</Link>
                         <Link href="/#contact" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Contact</Link>
                     </div>
                 </div>

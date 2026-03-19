@@ -36,7 +36,7 @@ export default function Footer() {
                                 <Link href="/#services" className="text-gray-300 hover:text-white transition-colors">Our Fleet</Link>
                             </li>
                             <li>
-                                <Link href="/booking" className="text-gray-300 hover:text-white transition-colors">Book a Transport</Link>
+                                <Link href="/#contact" scroll={true} className="text-gray-300 hover:text-white transition-colors">Enquiry</Link>
                             </li>
                         </ul>
                     </div>
