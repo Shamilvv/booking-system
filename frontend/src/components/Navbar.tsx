@@ -31,7 +31,6 @@ export default function Navbar() {
                         <Link href="/" className="text-steel font-medium hover:text-royal transition-colors">Home</Link>
                         <Link href="/#about" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">About Us</Link>
                         <Link href="/#services" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Services</Link>
-                        <Link href="/#contact" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Enquiry</Link>
                         <Link href="/#contact" scroll={true} className="text-steel font-medium hover:text-royal transition-colors">Contact</Link>
                     </div>
                 </div>
