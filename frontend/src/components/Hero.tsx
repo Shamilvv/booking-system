@@ -15,7 +15,7 @@ export default function Hero() {
                         </p>
                         <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Link href="/#contact" scroll={true} className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-royal hover:bg-royal-light transition-all md:py-4 md:text-lg md:px-10 shadow-lg shadow-royal/30 hover:shadow-royal/50 hover:-translate-y-0.5">
-                                Enquire Now
+                                Contact Now
                             </Link>
                             <Link href="/#services" className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-steel bg-white hover:bg-gray-50 transition-colors md:py-4 md:text-lg md:px-10">
                                 View Fleet
