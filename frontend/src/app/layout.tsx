@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ALNAS Transportation",
-  description: "Official website for ALNAS Transportation - Moving Excellence",
+  title: "ALNAS TRANSPORTING W.L.L",
+  description: "Official website for ALNAS TRANSPORTING W.L.L - Moving Excellence",
 };
 
 export default function RootLayout({

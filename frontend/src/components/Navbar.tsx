@@ -19,7 +19,7 @@ export default function Navbar() {
                             <div className="flex flex-col">
                                 <span className="text-xl font-black tracking-tighter leading-none">
                                     <span className="text-steel">ALNAS</span>
-                                    <span className="text-royal ml-1">TRANSPORT</span>
+                                    <span className="text-royal ml-1">TRANSPORTING W.L.L</span>
                                 </span>
                                 <span className="text-[10px] font-bold text-steel-light tracking-[0.2em] uppercase leading-none mt-1">
                                     Moving Excellence

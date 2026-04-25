@@ -16,7 +16,7 @@ export default function Footer() {
                             <div className="flex flex-col">
                                 <span className="text-lg font-black tracking-tighter leading-none">
                                     <span className="text-white">ALNAS</span>
-                                    <span className="text-royal-light ml-1">TRANSPORT</span>
+                                    <span className="text-royal-light ml-1">TRANSPORTING W.L.L</span>
                                 </span>
                                 <span className="text-[9px] font-bold text-gray-400 tracking-[0.15em] uppercase mt-1">
                                     Moving Excellence
@@ -24,7 +24,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-300 text-sm leading-relaxed mb-2">
-                            ALNAS TRANSPORTATION has been providing top-tier logistics and specialized chemical transportation services in Qatar for over 15 years.
+                            ALNAS TRANSPORTING W.L.L has been providing top-tier logistics and specialized chemical transportation services in Qatar for over 15 years.
                         </p>
                         <p className="text-gray-400 text-xs font-semibold">
                             CPR NO: 47256
@@ -76,7 +76,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-                    <p>&copy; {new Date().getFullYear()} ALNAS TRANSPORTATION. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} ALNAS TRANSPORTING W.L.L. All rights reserved.</p>
                 </div>
             </div>
         </footer>
