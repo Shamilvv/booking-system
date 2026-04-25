@@ -7,15 +7,16 @@ export default function Hero() {
             {/* Background Image with Enhanced Mobile Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="/hero bg/hero bg.png"
+                    src="/hero bg/professional_hero_bg.png"
                     alt="Alnas Transportation Fleet"
                     fill
                     className="object-cover object-center lg:object-right-top"
                     priority
                 />
                 {/* Mobile-first vertical gradient, transitions to horizontal on desktop */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 lg:bg-gradient-to-r lg:from-black/95 lg:via-black/60 lg:to-transparent z-10" />
             </div>
+
 
             <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24 lg:py-32 w-full">
                 <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
