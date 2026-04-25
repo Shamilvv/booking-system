@@ -95,7 +95,7 @@ export default function About() {
         {
             title: '3 Ton Truck',
             description: 'Fast and reliable for medium-sized deliveries. Perfect for city transport and fast-paced logistics operations.',
-            imagePosition: 'object-bottom',
+            imagePosition: 'object-center',
             images: [
                 '/3TON/3.jpeg'
             ]
