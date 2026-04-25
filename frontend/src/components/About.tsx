@@ -40,7 +40,7 @@ const ImageSlider = ({ images, title }: { images: string[], title: string }) => 
                         alt={`${title} - view ${idx + 1}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-1000 group-hover/slider:scale-105"
+                        className="object-contain transition-transform duration-1000 group-hover/slider:scale-105"
                     />
                 </div>
             ))}
