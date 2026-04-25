@@ -95,25 +95,38 @@ export default function About() {
         {
             title: '3 Ton Truck',
             description: 'Fast and reliable for medium-sized deliveries. Perfect for city transport and fast-paced logistics operations.',
-            images: ['/3ton.jpeg']
+            images: [
+                '/3TON/3ton.jpeg',
+                '/3TON/WhatsApp Image 2026-04-25 at 3.38.49 PM.jpeg',
+                '/3TON/WhatsApp Image 2026-04-25 at 3.38.50 PM (1).jpeg',
+                '/3TON/WhatsApp Image 2026-04-25 at 3.38.50 PM.jpeg'
+            ]
         },
         {
             title: '7 Ton Truck',
             description: 'Heavy hauling capability for industrial needs. Engineered for larger loads, robust performance, and secure transport.',
-            images: ['/7ton.jpeg']
+            images: [
+                '/7TON/7ton.jpeg',
+                '/7TON/WhatsApp Image 2026-04-25 at 3.42.45 PM.jpeg',
+                '/7TON/WhatsApp Image 2026-04-25 at 3.42.45 PM (1).jpeg'
+            ]
         },
         {
             title: 'Flatbed Trailer',
             description: 'Highly versatile empty bed trailer explicitly designed for safely transporting oversized, irregular, and exceptionally heavy equipment.',
-            images: ['/trailer.jpeg']
+            images: [
+                '/TRAILER 2/trailer.jpeg',
+                '/TRAILER 2/WhatsApp Image 2026-04-25 at 3.35.45 PM.jpeg',
+                '/TRAILER 2/WhatsApp Image 2026-04-25 at 3.35.45 PM (1).jpeg'
+            ]
         },
         {
             title: 'Green Trailer Series',
             description: 'Specialized fleet handling bulk transport and large-scale cargo. Built tough for the most demanding delivery requirements.',
             images: [
-                '/GREEN TRAILER/WhatsApp Image 2026-04-18 at 1.39.49 PM.jpeg',
-                '/GREEN TRAILER/WhatsApp Image 2026-04-18 at 1.39.49 PM (1).jpeg',
-                '/GREEN TRAILER/WhatsApp Image 2026-04-18 at 1.39.49 PM (2).jpeg'
+                '/TRAILER 1/WhatsApp Image 2026-04-18 at 1.39.49 PM.jpeg',
+                '/TRAILER 1/WhatsApp Image 2026-04-18 at 1.39.49 PM (1).jpeg',
+                '/TRAILER 1/WhatsApp Image 2026-04-18 at 1.39.49 PM (2).jpeg'
             ]
         }
     ];
