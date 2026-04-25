@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const ImageSlider = ({ images, title }: { images: string[], title: string }) => {
+const ImageSlider = ({ images, title, imagePosition = "object-center" }: { images: string[], title: string, imagePosition?: string }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -40,7 +40,7 @@ const ImageSlider = ({ images, title }: { images: string[], title: string }) => 
                         alt={`${title} - view ${idx + 1}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-contain transition-transform duration-1000 group-hover/slider:scale-105"
+                        className={`object-cover ${imagePosition} transition-transform duration-1000 group-hover/slider:scale-105`}
                     />
                 </div>
             ))}
@@ -95,6 +95,7 @@ export default function About() {
         {
             title: '3 Ton Truck',
             description: 'Fast and reliable for medium-sized deliveries. Perfect for city transport and fast-paced logistics operations.',
+            imagePosition: 'object-bottom',
             images: [
                 '/3TON/3ton.jpeg',
                 '/3TON/WhatsApp Image 2026-04-25 at 3.38.49 PM.jpeg',
@@ -105,6 +106,7 @@ export default function About() {
         {
             title: '7 Ton Truck',
             description: 'Heavy hauling capability for industrial needs. Engineered for larger loads, robust performance, and secure transport.',
+            imagePosition: 'object-bottom',
             images: [
                 '/7TON/7ton.jpeg',
                 '/7TON/WhatsApp Image 2026-04-25 at 3.42.45 PM.jpeg',
@@ -157,7 +159,7 @@ export default function About() {
                         >
                             {/* Image Section */}
                             <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-100 overflow-hidden shrink-0">
-                                <ImageSlider images={vehicle.images} title={vehicle.title} />
+                                <ImageSlider images={vehicle.images} title={vehicle.title} imagePosition={vehicle.imagePosition} />
                             </div>
                             
                             {/* Details Section */}
