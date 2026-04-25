@@ -16,11 +16,12 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
             isScrolled 
-                ? 'bg-slate-900/95 shadow-lg py-3' 
-                : 'bg-black/30 backdrop-blur-md py-5'
-        } border-b ${isScrolled ? 'border-white/5' : 'border-white/10'}`}>
+                ? 'bg-[#0a1530]/95 shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-3 backdrop-blur-lg' 
+                : 'bg-black/20 backdrop-blur-md py-5'
+        } border-b ${isScrolled ? 'border-blue-500/20' : 'border-white/10'}`}>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
                     <div className="flex-shrink-0">
