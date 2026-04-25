@@ -97,14 +97,19 @@ export default function About() {
             description: 'Fast and reliable for medium-sized deliveries. Perfect for city transport and fast-paced logistics operations.',
             imagePosition: 'object-center',
             images: [
-                '/3TON/3.jpeg'
+                '/3TON/3.jpeg',
+                '/3TON/3ton.jpeg',
+                '/3TON/WhatsApp Image 2026-04-25 at 3.38.49 PM.jpeg',
+                '/3TON/WhatsApp Image 2026-04-25 at 3.38.50 PM.jpeg'
             ]
         },
         {
             title: '7 Ton Truck',
             description: 'Heavy hauling capability for industrial needs. Engineered for larger loads, robust performance, and secure transport.',
             images: [
-                '/7TON/7.jpeg'
+                '/7TON/7.jpeg',
+                '/7TON/7ton.jpeg',
+                '/7TON/WhatsApp Image 2026-04-25 at 3.42.45 PM (1).jpeg'
             ]
         },
         {
