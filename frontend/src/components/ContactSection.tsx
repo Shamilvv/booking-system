@@ -50,8 +50,14 @@ export default function ContactSection() {
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-2 tracking-wide">Contact Numbers</h3>
                                 <div className="space-y-2 text-slate-300 font-light">
-                                    <p className="flex items-center"><span className="text-blue-400 mr-2 text-sm font-semibold">Hotline:</span> +974 30395678</p>
-                                    <p className="flex items-center"><span className="text-indigo-400 mr-2 text-sm font-semibold">Opers:</span> +974 66676657</p>
+                                    <p className="flex items-center">
+                                        <span className="text-blue-400 mr-2 text-sm font-semibold">Hotline:</span>
+                                        <a href="tel:+97430395678" className="hover:text-blue-300 transition-colors">+974 30395678</a>
+                                    </p>
+                                    <p className="flex items-center">
+                                        <span className="text-indigo-400 mr-2 text-sm font-semibold">Opers:</span>
+                                        <a href="tel:+97466676657" className="hover:text-indigo-300 transition-colors">+974 66676657</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
