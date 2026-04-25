@@ -96,14 +96,14 @@ export default function About() {
             title: '3 Ton Truck',
             description: 'Fast and reliable for medium-sized deliveries. Perfect for city transport and fast-paced logistics operations.',
             images: [
-                '/3TON/3ton.jpeg'
+                '/3TON/3.jpeg'
             ]
         },
         {
             title: '7 Ton Truck',
             description: 'Heavy hauling capability for industrial needs. Engineered for larger loads, robust performance, and secure transport.',
             images: [
-                '/7TON/7ton.jpeg'
+                '/7TON/7.jpeg'
             ]
         },
         {
