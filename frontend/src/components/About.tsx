@@ -24,7 +24,7 @@ const ImageSlider = ({ images, title, imagePosition = "object-center" }: { image
 
     return (
         <div 
-            className="absolute inset-0 w-full h-full bg-slate-100 group/slider"
+            className="absolute inset-0 w-full h-full bg-slate-50 group/slider"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -133,7 +133,7 @@ export default function About() {
     ];
 
     return (
-        <div id="about" className="py-20 sm:py-24 bg-zinc-50 border-t border-gray-200">
+        <div id="about" className="py-20 sm:py-24 bg-slate-50 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Header */}
@@ -154,10 +154,10 @@ export default function About() {
                     {fleet.map((vehicle, index) => (
                         <div 
                             key={index} 
-                            className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-500"
+                            className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 group"
                         >
                             {/* Image Section */}
-                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-100 overflow-hidden shrink-0">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-50 overflow-hidden shrink-0">
                                 <ImageSlider images={vehicle.images} title={vehicle.title} imagePosition={vehicle.imagePosition} />
                             </div>
                             
@@ -169,7 +169,7 @@ export default function About() {
                                         Class {index + 1}
                                     </span>
                                 </div>
-                                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight">
+                                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-royal transition-colors duration-300">
                                     {vehicle.title}
                                 </h3>
                                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
