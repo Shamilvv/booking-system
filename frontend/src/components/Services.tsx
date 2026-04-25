@@ -13,7 +13,7 @@ const services = [
     },
     {
         title: 'Specialized Boom Trucks',
-        description: 'Heavy lifting and transport combined. Ideal for construction sites and heavy machinery.',
+        description: 'Featuring 12 ton boom trucks for heavy lifting and transport combined. Ideal for construction sites and heavy machinery.',
         icon: Zap,
     },
     {

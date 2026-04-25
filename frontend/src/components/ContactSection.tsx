@@ -32,7 +32,11 @@ export default function ContactSection() {
                                     <MapPin className="h-7 w-7 text-blue-400" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-2 tracking-wide">Our Office</h3>
-                                <p className="text-slate-300 font-light leading-relaxed">Al Mansoura, Doha<br />State of Qatar</p>
+                                <p className="text-slate-300 font-light leading-relaxed text-sm">
+                                    Street 330, Building No:57, Zone:25<br />
+                                    Office No:10, 4th Floor Buzwair Building<br />
+                                    Near Almeera, Doha, Qatar
+                                </p>
                             </div>
                         </div>
 
@@ -61,8 +65,8 @@ export default function ContactSection() {
                                     <Mail className="h-7 w-7 text-blue-400" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-2 tracking-wide">Email Address</h3>
-                                <a href="mailto:alnastransports@gmail.com" className="text-blue-300 font-light hover:text-white transition-colors relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left break-all">
-                                    alnastransports@gmail.com
+                                <a href="mailto:alnasqatar@yahoo.com" className="text-blue-300 font-light hover:text-white transition-colors relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left break-all">
+                                    alnasqatar@yahoo.com
                                 </a>
                             </div>
                         </div>

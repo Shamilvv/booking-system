@@ -23,8 +23,11 @@ export default function Footer() {
                                 </span>
                             </div>
                         </Link>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                        <p className="text-gray-300 text-sm leading-relaxed mb-2">
                             ALNAS TRANSPORTATION has been providing top-tier logistics and specialized chemical transportation services in Qatar for over 15 years.
+                        </p>
+                        <p className="text-gray-400 text-xs font-semibold">
+                            CPR NO: 47256
                         </p>
                     </div>
 
@@ -54,17 +57,19 @@ export default function Footer() {
                             <li className="flex items-start">
                                 <Mail className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
                                 <a
-                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=alnastransports@gmail.com&su=Inquiry from ALNAS Website"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-300 hover:text-white transition-colors"
+                                    href="mailto:alnasqatar@yahoo.com"
+                                    className="text-gray-300 hover:text-white transition-colors break-all"
                                 >
-                                    alnastransports@gmail.com
+                                    alnasqatar@yahoo.com
                                 </a>
                             </li>
                             <li className="flex items-start">
                                 <MapPin className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-300">Al Mansoura, Doha, State of Qatar</span>
+                                <span className="text-gray-300 text-sm">
+                                    Street 330, Building No:57, Zone:25<br />
+                                    Office No:10, 4th Floor Buzwair Building<br />
+                                    Near Almeera, Doha, Qatar
+                                </span>
                             </li>
                         </ul>
                     </div>
