@@ -11,7 +11,7 @@ export default function Hero() {
                             <span className="block text-royal">Chemical Transport</span>
                         </h1>
                         <p className="mt-4 text-base text-steel-light sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0">
-                            With over 15+ years of experience in Qatar, ALNAS TRANSPORTING W.L.L delivers excellence. We handle industrial goods, liquid assets, and specialized chemical transports with dedicated passes.
+                            With over 15+ years of experience in Qatar, AL NAS TRANSPORTING W.L.L delivers excellence. We handle industrial goods, liquid assets, and specialized chemical transports with dedicated passes.
                         </p>
                         <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Link href="/#contact" scroll={true} className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-royal hover:bg-royal-light transition-all md:py-4 md:text-lg md:px-10 shadow-lg shadow-royal/30 hover:shadow-royal/50 hover:-translate-y-0.5">
