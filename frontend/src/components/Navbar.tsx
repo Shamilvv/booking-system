@@ -17,11 +17,11 @@ export default function Navbar() {
                                 priority
                             />
                             <div className="flex flex-col">
-                                <span className="text-sm xs:text-base sm:text-xl md:text-2xl font-black tracking-tighter leading-tight sm:leading-none text-petrol">
+                                <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-black tracking-[calc(-0.04em)] leading-tight text-petrol">
                                     AL NAS
                                     <span className="text-safety-orange ml-1">TRANSPORTING W.L.L</span>
                                 </span>
-                                <span className="text-[8px] sm:text-[10px] font-bold text-steel-light tracking-[0.2em] sm:tracking-[0.3em] uppercase leading-none mt-1 sm:mt-1.5">
+                                <span className="text-[9px] sm:text-[10px] font-bold text-steel-light tracking-[0.1em] sm:tracking-[0.3em] uppercase leading-none mt-1 sm:mt-1.5">
                                     Moving Excellence
                                 </span>
                             </div>
