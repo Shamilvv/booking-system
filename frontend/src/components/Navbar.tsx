@@ -7,21 +7,21 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-24 items-center">
                     <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center space-x-3 group">
+                        <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
                             <Image
                                 src="/logo.png"
                                 alt="ALNAS Logo"
                                 width={50}
                                 height={50}
-                                className="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+                                className="h-10 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
                                 priority
                             />
                             <div className="flex flex-col">
-                                <span className="text-2xl font-black tracking-tighter leading-none text-petrol">
+                                <span className="text-sm xs:text-base sm:text-xl md:text-2xl font-black tracking-tighter leading-tight sm:leading-none text-petrol">
                                     AL NAS
                                     <span className="text-safety-orange ml-1">TRANSPORTING W.L.L</span>
                                 </span>
-                                <span className="text-[10px] font-bold text-steel-light tracking-[0.3em] uppercase leading-none mt-1.5">
+                                <span className="text-[8px] sm:text-[10px] font-bold text-steel-light tracking-[0.2em] sm:tracking-[0.3em] uppercase leading-none mt-1 sm:mt-1.5">
                                     Moving Excellence
                                 </span>
                             </div>
