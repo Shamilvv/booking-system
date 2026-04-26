@@ -18,8 +18,8 @@ export default function Navbar() {
                             />
                             <div className="flex flex-col">
                                 <span className="text-2xl font-black tracking-tighter leading-none text-petrol">
-                                    ALNAS
-                                    <span className="text-safety-orange ml-1">TRANSPORT</span>
+                                    AL NAS
+                                    <span className="text-safety-orange ml-1">TRANSPORTING W.L.L</span>
                                 </span>
                                 <span className="text-[10px] font-bold text-steel-light tracking-[0.3em] uppercase leading-none mt-1.5">
                                     Moving Excellence
