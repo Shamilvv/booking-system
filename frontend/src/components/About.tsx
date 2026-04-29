@@ -104,12 +104,23 @@ export default function About() {
             ]
         },
         {
+            title: '5 Ton Truck',
+            description: 'The versatile workhorse for medium-heavy transport. Optimized for balanced load capacity and efficient regional distribution.',
+            imagePosition: 'object-center',
+            images: [
+                '/5ton/WhatsApp Image 2026-04-28 at 7.03.49 PM.jpeg',
+                '/5ton/WhatsApp Image 2026-04-28 at 7.03.49 PM (1).jpeg',
+                '/5ton/WhatsApp Image 2026-04-28 at 7.03.49 PM (2).jpeg',
+                '/5ton/WhatsApp Image 2026-04-28 at 7.03.49 PM (3).jpeg'
+            ]
+        },
+        {
             title: '7 Ton Truck',
             description: 'Heavy hauling capability for industrial needs. Engineered for larger loads, robust performance, and secure transport.',
             images: [
-                '/7TON/7.jpeg',
-                '/7TON/7ton.jpeg',
-                '/7TON/WhatsApp Image 2026-04-25 at 3.42.45 PM (1).jpeg'
+                '/7TON/new/WhatsApp Image 2026-04-30 at 12.25.46 AM.jpeg',
+                '/7TON/new/WhatsApp Image 2026-04-30 at 12.25.46 AM (1).jpeg',
+                '/7TON/new/WhatsApp Image 2026-04-30 at 12.25.46 AM (2).jpeg'
             ]
         },
         {
@@ -133,48 +144,71 @@ export default function About() {
     ];
 
     return (
-        <div id="about" className="py-20 sm:py-24 bg-slate-50 border-t border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="about" className="py-16 lg:py-32 bg-white relative overflow-hidden">
+            {/* Background Accents */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 -z-10"></div>
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-petrol/5 skew-x-[-12deg] translate-x-1/2 -z-10"></div>
+            
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 
                 {/* Header */}
-                <div className="text-center mb-16 sm:mb-20">
-                    <span className="inline-block py-1.5 px-4 rounded-full bg-blue-50 text-royal text-xs sm:text-sm font-bold tracking-[0.15em] uppercase mb-4 border border-blue-100 shadow-sm">
-                        Alnas Fleet Gallery
-                    </span>
-                    <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
-                        Premium Vehicles for<br className="hidden sm:block" /> Every Challenge
+                <div className="text-center mb-16 lg:mb-24">
+                    <div className="inline-flex items-center space-x-2 bg-safety-orange/10 border border-safety-orange/20 px-4 py-1.5 rounded-full mb-6">
+                        <span className="w-2 h-2 bg-safety-orange rounded-full"></span>
+                        <span className="text-petrol text-xs font-black uppercase tracking-[0.2em]">Our Fleet Gallery</span>
+                    </div>
+                    
+                    <h2 className="text-4xl md:text-7xl font-black text-petrol tracking-tighter leading-none mb-8">
+                        PREMIUM <span className="text-safety-orange">VEHICLES</span> <br />
+                        <span className="opacity-40">FOR EVERY CHALLENGE.</span>
                     </h2>
-                    <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-slate-600 mx-auto leading-relaxed">
-                        Discover our versatile fleet designed to handle everything from quick city deliveries to massive industrial cargo. Reliable, secure, and ready to roll.
+                    
+                    <p className="max-w-2xl mx-auto text-lg text-steel-light font-medium leading-relaxed">
+                        Discover our versatile fleet designed to handle everything from quick city deliveries to massive industrial cargo. 
+                        Reliable, secure, and ready to roll across the region.
                     </p>
                 </div>
                 
                 {/* Fleet Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                     {fleet.map((vehicle, index) => (
                         <div 
                             key={index} 
-                            className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 group"
+                            className="group flex flex-col bg-white border border-gray-100 hover:border-safety-orange/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,61,76,0.1)]"
                         >
                             {/* Image Section */}
-                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-50 overflow-hidden shrink-0">
+                            <div className="relative w-full aspect-[16/10] bg-gray-50 overflow-hidden">
                                 <ImageSlider images={vehicle.images} title={vehicle.title} imagePosition={vehicle.imagePosition} />
+                                
+                                {/* Overlay Index */}
+                                <div className="absolute top-6 left-6 z-40 bg-petrol text-white w-10 h-10 flex items-center justify-center font-black text-sm">
+                                    0{index + 1}
+                                </div>
+                                
+                                {/* Hover Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-petrol/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                             </div>
                             
                             {/* Details Section */}
-                            <div className="p-6 sm:p-8 flex flex-col grow">
-                                <div className="flex items-center space-x-3 mb-3">
-                                    <div className="h-1 w-8 bg-royal rounded-full"></div>
-                                    <span className="text-royal font-bold tracking-widest text-xs uppercase">
-                                        Class {index + 1}
-                                    </span>
+                            <div className="p-8 sm:p-10 border-t border-gray-50 relative">
+                                <div className="absolute top-0 right-10 w-12 h-1 bg-safety-orange transform -translate-y-1/2"></div>
+                                
+                                <div className="flex items-center space-x-2 mb-4">
+                                    <span className="text-safety-orange text-[10px] font-black uppercase tracking-[0.3em]">Commercial Fleet</span>
                                 </div>
-                                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-royal transition-colors duration-300">
+                                
+                                <h3 className="text-3xl font-black text-petrol mb-4 tracking-tighter group-hover:text-safety-orange transition-colors duration-300 uppercase">
                                     {vehicle.title}
                                 </h3>
-                                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                                
+                                <p className="text-steel-light text-base leading-relaxed font-medium mb-8">
                                     {vehicle.description}
                                 </p>
+                                
+                                <div className="flex items-center text-xs font-black uppercase tracking-widest text-petrol group-hover:text-safety-orange transition-all">
+                                    View Specifications
+                                    <span className="ml-2 transform group-hover:translate-x-2 transition-transform">→</span>
+                                </div>
                             </div>
                         </div>
                     ))}

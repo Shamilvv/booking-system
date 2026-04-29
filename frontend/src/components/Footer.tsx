@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
     return (
-        <footer id="contact" className="bg-steel text-white pt-16 pb-8">
+        <footer id="contact" className="bg-petrol text-white pt-16 lg:pt-24 pb-8 border-t border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
                     {/* Brand & Description */}
@@ -16,56 +16,59 @@ export default function Footer() {
                             <div className="flex flex-col">
                                 <span className="text-lg font-black tracking-tighter leading-none">
                                     <span className="text-white">AL NAS</span>
-                                    <span className="text-royal-light ml-1">TRANSPORTING W.L.L</span>
+                                    <span className="text-safety-orange ml-1">TRANSPORTING W.L.L</span>
                                 </span>
                                 <span className="text-[9px] font-bold text-gray-400 tracking-[0.15em] uppercase mt-1">
                                     Moving Excellence
                                 </span>
                             </div>
                         </Link>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-2">
+                        <p className="text-slate-300 text-sm leading-relaxed mb-4">
                             AL NAS TRANSPORTING W.L.L has been providing top-tier logistics and specialized chemical transportation services in Qatar for over 15 years.
                         </p>
-                        <p className="text-gray-400 text-xs font-semibold">
+                        <p className="text-safety-orange text-xs font-black tracking-widest uppercase">
                             CPR NO: 47256
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="col-span-1 md:pl-8">
-                        <h3 className="text-lg font-semibold mb-6 border-b border-gray-600 pb-2 inline-block">Quick Links</h3>
+                        <h3 className="text-lg font-black uppercase tracking-tight mb-6 border-b border-white/10 pb-2 inline-block">Quick Links</h3>
                         <ul className="space-y-4">
                             <li>
-                                <Link href="/#services" className="text-gray-300 hover:text-white transition-colors">Our Fleet</Link>
+                                <Link href="/#services" className="text-slate-300 hover:text-safety-orange transition-colors font-medium">Our Fleet & Services</Link>
                             </li>
                             <li>
-                                <Link href="/#contact" scroll={true} className="text-gray-300 hover:text-white transition-colors">Enquiry</Link>
+                                <Link href="/#about" className="text-slate-300 hover:text-safety-orange transition-colors font-medium">About Us</Link>
+                            </li>
+                            <li>
+                                <Link href="/#contact" scroll={true} className="text-slate-300 hover:text-safety-orange transition-colors font-medium">Enquiry & Contact</Link>
                             </li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div className="col-span-1">
-                        <h3 className="text-lg font-semibold mb-6 border-b border-gray-600 pb-2 inline-block">Contact Us</h3>
+                        <h3 className="text-lg font-black uppercase tracking-tight mb-6 border-b border-white/10 pb-2 inline-block">Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start">
-                                <Phone className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
-                                <a href="tel:+97430395678" className="text-gray-300 hover:text-white transition-colors">
+                                <Phone className="h-5 w-5 text-safety-orange mr-3 mt-0.5 flex-shrink-0" />
+                                <a href="tel:+97430395678" className="text-slate-300 hover:text-white transition-colors font-medium">
                                     +974 30395678
                                 </a>
                             </li>
                             <li className="flex items-start">
-                                <Mail className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
+                                <Mail className="h-5 w-5 text-safety-orange mr-3 mt-0.5 flex-shrink-0" />
                                 <a
                                     href="mailto:alnasqatar@yahoo.com"
-                                    className="text-gray-300 hover:text-white transition-colors break-all"
+                                    className="text-slate-300 hover:text-white transition-colors break-all font-medium"
                                 >
                                     alnasqatar@yahoo.com
                                 </a>
                             </li>
                             <li className="flex items-start">
-                                <MapPin className="h-5 w-5 text-royal-light mr-3 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-300 text-sm">
+                                <MapPin className="h-5 w-5 text-safety-orange mr-3 mt-0.5 flex-shrink-0" />
+                                <span className="text-slate-300 text-sm font-medium leading-relaxed">
                                     Street 330, Building No:57, Zone:25<br />
                                     Office No:10, 4th Floor Buzwair Building<br />
                                     Near Almeera, Doha, Qatar
@@ -75,7 +78,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <div className="mt-12 lg:mt-16 pt-8 border-t border-white/10 text-center text-slate-400 text-sm font-medium">
                     <p>&copy; {new Date().getFullYear()} AL NAS TRANSPORTING W.L.L. All rights reserved.</p>
                 </div>
             </div>

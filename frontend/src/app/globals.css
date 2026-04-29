@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-petrol: #003D4C;
-  --color-petrol-light: #005a70;
-  --color-safety-orange: #FF6B35;
-  --color-safety-orange-light: #ff8c61;
+  /* Using standard professional corporate colors (Navy & Blue) while keeping variable names for class compatibility */
+  --color-petrol: #0F172A; /* Deep Navy / Slate 900 */
+  --color-petrol-light: #1E293B; /* Slate 800 */
+  --color-safety-orange: #2563EB; /* Corporate Blue 600 */
+  --color-safety-orange-light: #3B82F6; /* Corporate Blue 500 */
   --color-royal: #1D4ED8;
-  --color-steel: #374151;
-  --color-steel-light: #4B5563;
+  --color-steel: #334155; /* Slate 700 */
+  --color-steel-light: #475569; /* Slate 600 */
   --color-background: #ffffff;
-  --color-foreground: #111827;
+  --color-foreground: #0F172A;
 }
 
 @layer base {

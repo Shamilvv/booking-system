@@ -1,7 +1,13 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100/50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,8 +41,56 @@ export default function Navbar() {
                             Connect With Us
                         </Link>
                     </div>
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden flex items-center">
+                        <button 
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="text-petrol hover:text-safety-orange focus:outline-none transition-colors"
+                        >
+                            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            {/* Mobile Menu Dropdown */}
+            {isMenuOpen && (
+                <div className="md:hidden bg-white border-b border-gray-100 shadow-lg absolute w-full">
+                    <div className="px-4 pt-2 pb-6 space-y-4 flex flex-col">
+                        <Link 
+                            href="/" 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-petrol font-bold uppercase tracking-wider text-sm hover:text-safety-orange transition-colors"
+                        >
+                            Home
+                        </Link>
+                        <Link 
+                            href="/#about" 
+                            scroll={true} 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-petrol font-bold uppercase tracking-wider text-sm hover:text-safety-orange transition-colors"
+                        >
+                            About Us
+                        </Link>
+                        <Link 
+                            href="/#services" 
+                            scroll={true} 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-petrol font-bold uppercase tracking-wider text-sm hover:text-safety-orange transition-colors"
+                        >
+                            Services
+                        </Link>
+                        <Link 
+                            href="/#contact" 
+                            scroll={true} 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="bg-safety-orange text-white px-6 py-3 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-petrol transition-all shadow-lg shadow-safety-orange/20 hover:shadow-petrol/20 text-center w-max mt-4"
+                        >
+                            Connect With Us
+                        </Link>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }
