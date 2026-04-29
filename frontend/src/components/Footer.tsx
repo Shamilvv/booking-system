@@ -27,7 +27,7 @@ export default function Footer() {
                             AL NAS TRANSPORTING W.L.L has been providing top-tier logistics and specialized chemical transportation services in Qatar for over 15 years.
                         </p>
                         <p className="text-safety-orange text-xs font-black tracking-widest uppercase">
-                            CPR NO: 47256
+                            CR NO: 47256
                         </p>
                     </div>
 
